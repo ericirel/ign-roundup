@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Reviews</title>
+  <link rel="stylesheet" href="/css/main.css" type="text/css">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="span8">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Art</th>
+          <th>Title</th>
+          <th>Genre</th>
+          <th>Score</th>
+          <th>Description</th>
+          <th><img src="http://vignette4.wikia.nocookie.net/nintendo/images/3/36/Ign-logo.png/revision/latest?cb=20120630193251&path-prefix=en" alt="IGN" height="45" width="120">
+        </tr>
+      </thead>
+      <tbody>
+        <% @games.each do |game| %>
+          <tr>
+            <td><%= game.at_css('.item-boxArt') %></td>
+            <td><%= game.at_css('.item-title').text %></td>
+            <td><%= game.at_css('.item-genre').text %></td>
+            <td><%= game.at_css('.scoreBox-score').text %></td>
+            <td><%= game.at_css('.item-details').text %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
